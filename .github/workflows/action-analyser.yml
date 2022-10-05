@@ -2,9 +2,9 @@ name: Github Action Security Analysis
 
 on:
   push:
-    branches: [ sec-pass ]
+    branches: [ main ]
   pull_request:
-    branches: [ sec-pass ]
+    branches: [ main ]
     paths-ignore:
       - README.md
       - LICENSE

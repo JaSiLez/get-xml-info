@@ -12,7 +12,7 @@ inputs:
   xpath:
     description: 'The XPath of a node, to fetch its contents as output.'
     required: true
-    default: '//element'
+    default: '//title[@lang]'
 runs:
   using: 'node12'
   main: 'index.js'

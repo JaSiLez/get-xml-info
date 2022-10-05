@@ -39,4 +39,4 @@ jobs:
         uses: ./
         with:
           xml-file: 'test.xml'
-          xpath: '/bookstore/book[1]'	# Selects the first book element that is the child of the bookstore element
+          xpath: '//title[@lang]'	# Selects the first book element that is the child of the bookstore element

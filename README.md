@@ -10,6 +10,7 @@
 ### `xpath`
 
 **Required** The xpath of the nodes from which you want to retrieve information. Default `"//element"`.
+[DOCs](https://www.w3schools.com/xml/xml_xpath.asp)
 
 ## Example usage
 

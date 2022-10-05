@@ -37,3 +37,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Test Get XML Info
         uses: ./
+        with:
+          xml-file: 'test.xml'
+          xpath: '/bookstore/book[1]'	# Selects the first book element that is the child of the bookstore element

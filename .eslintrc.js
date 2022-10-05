@@ -23,8 +23,8 @@ module.exports = {
       "react-hooks/exhaustive-deps": "warn",
       "@typescript-eslint/no-unused-vars": 0,
       strict: 1,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true
+      "noUnusedLocals": 1,
+      "noUnusedParameters": 1
     },
     settings: {
       react: {

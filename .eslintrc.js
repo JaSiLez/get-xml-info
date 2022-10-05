@@ -24,7 +24,8 @@ module.exports = {
       "@typescript-eslint/no-unused-vars": 0,
       strict: 1,
       "noUnusedLocals": 1,
-      "noUnusedParameters": 1
+      "noUnusedParameters": 1,
+      "no-cond-assign": 0
     },
     settings: {
       react: {

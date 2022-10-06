@@ -4,7 +4,8 @@
   "description": "Get Information from XML files to use into your GitHub workflows",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,6 @@
     "xmldom": "^0.6.0",
     "xpath": "0.0.32"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mavrosxristoforos/get-xml-info.git"
@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/mavrosxristoforos/get-xml-info/issues"
   },
-  "homepage": "https://github.com/mavrosxristoforos/get-xml-info#readme"
+  "homepage": "https://github.com/mavrosxristoforos/get-xml-info#readme",
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.0.1"
+  }
 }

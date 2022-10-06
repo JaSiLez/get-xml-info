@@ -25,7 +25,12 @@ module.exports = {
       strict: 1,
       "noUnusedLocals": 0,
       "noUnusedParameters": 0,
-      "no-cond-assign": 0
+      "no-cond-assign": 0,
+      "remark-lint-final-newline": 0,
+      "remark-lint-no-undefined-references": 0,
+      "remark-lint-no-shortcut-reference-link": 0,
+      
+
     },
     settings: {
       react: {

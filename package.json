@@ -4,7 +4,7 @@
   "description": "Get Information from XML files to use into your GitHub workflows",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "eslint ."
   },
   "keywords": [],
@@ -29,6 +29,8 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
-    "eslint-plugin-promise": "^6.0.1"
+    "eslint-plugin-promise": "^6.0.1",
+    "jest": "^29.1.2",
+    "dotenv": "^16.0.3"
   }
 }

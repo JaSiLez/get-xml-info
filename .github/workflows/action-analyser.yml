@@ -24,7 +24,7 @@ jobs:
     steps:
       # Checkout the repository to the GitHub Actions runner
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Run Codacy Analysis CLI
         uses: codacy/codacy-analysis-cli-action@d43127fe38d20c527dc1951ae5aea23148bab738

@@ -11,32 +11,41 @@ on:
 
   workflow_dispatch:
 jobs:
-  nodejs-build:
+  check-dist:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 2
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3.5.0
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-##    - run: npm test        //Testing GH Actions
-  action-test:
-    runs-on: ubuntu-latest
-    needs: [ nodejs-build ]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Test Get XML Info
-        uses: ./
+      - uses: actions/checkout@v3
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v2
         with:
-          xml-file: 'test.xml'
-          xpath: '//title[@lang]'	# Selects the first book element that is the child of the bookstore element
+          node-version: 16.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Rebuild the dist/ directory
+        run: npm run build
+      - name: Compare the expected and actual dist/ directories
+        run: |
+          if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
+            echo "Detected uncommitted changes after build.  See status below:"
+            git diff
+            exit 1
+          fi
+        id: diff
+      # If index.js was different than expected, upload the expected version as an artifact
+      - uses: actions/upload-artifact@v3
+        if: ${{ failure() && steps.diff.conclusion == 'failure' }}
+        with:
+          name: dist
+          path: dist/
+
+  # unit tests
+  Unit-Tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set Node.js 16.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+    - run: npm ci
+    - run: npm test

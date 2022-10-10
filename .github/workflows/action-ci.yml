@@ -12,7 +12,6 @@ on:
   workflow_dispatch:
 jobs:
   check-dist:
-    runs-on: [ self-hosted, ubuntu-latest ]
     steps:
       - uses: actions/checkout@v3
       - name: Set Node.js 16.x
@@ -40,7 +39,6 @@ jobs:
 
   # unit tests
   units:
-    runs-on: [ self-hosted, ubuntu-latest ]
     steps:
     - uses: actions/checkout@v3
     - name: Set Node.js 16.x

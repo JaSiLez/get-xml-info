@@ -10,6 +10,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   },
+  ignorePatterns: ['dist/index.js'],
   rules: {
   }
 }

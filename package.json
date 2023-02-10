@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "minimist": "^1.2.6",
+    "minimist": "^1.2.8",
     "xmldom": "^0.6.0",
     "xpath": "0.0.32"
   },
